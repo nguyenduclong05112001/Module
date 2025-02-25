@@ -17,15 +17,14 @@ Pod::Spec.new do |spec|
 
   spec.name         = "Module"
   spec.version      = "0.0.1"
-  spec.summary      = "A short description of Module."
+  spec.summary      = "This is summary of Module."
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
   #   * Try to keep it short, snappy and to the point.
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
-  spec.description  = <<-DESC
-                   DESC
+  spec.description  = ""I have no idea what to write as a description""
 
   spec.homepage     = "https://github.com/nguyenduclong05112001/Module.git"
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
@@ -38,9 +37,9 @@ Pod::Spec.new do |spec|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  spec.license      = "MIT (example)"
+  spec.license      = "MIT"
   # spec.license      = { :type => "MIT", :file => "FILE_LICENSE" }
-
+  spec.author             = { "haha" => "12424@gmail.com" }
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
