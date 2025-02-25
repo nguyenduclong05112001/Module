@@ -1,0 +1,244 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0 effective-5.10 (swiftlang-6.0.0.9.10 clang-1600.0.26.2)
+// swift-module-flags: -target arm64-apple-ios14.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -enable-experimental-feature OpaqueTypeErasure -enable-bare-slash-regex -module-name Module
+import AVFoundation
+import Foundation
+import LocalAuthentication
+@_exported import Module
+import Photos
+import Swift
+import SystemConfiguration
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+extension Foundation.URLRequest {
+  public var curlString: Swift.String {
+    get
+  }
+}
+public enum ImageResult<T> {
+  case success(T)
+  case failure(any Swift.Error)
+}
+@objc @_inheritsConvenienceInitializers public class Networking : ObjectiveC.NSObject {
+  public static let shared: Module.Networking
+  public static func downloadImage(url: Foundation.URL, completion: @escaping (Module.ImageResult<Foundation.Data>) -> Swift.Void)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class Validation : ObjectiveC.NSObject {
+  public static let shared: Module.Validation
+  public func checkValidationEmail(_ emailString: Swift.String) -> Swift.Bool
+  public func isValidIdentityNo(identityNo: Swift.String) -> Swift.Bool
+  public func isValidFullname(fullName: Swift.String) -> Swift.Bool
+  public func isNumber(string: Swift.String) -> Swift.Bool
+  public func isDouble(_ string: Swift.String) -> Swift.Bool
+  public func isValidPhoneNumber(phone: Swift.String) -> Swift.Bool
+  public func isValidPhoneNumber2(phone: Swift.String) -> Swift.Bool
+  public func isValidSeriNumber(phone: Swift.String) -> Swift.Bool
+  public func isValidUsername(string: Swift.String) -> Swift.Bool
+  public func isValidIDNumber(string: Swift.String) -> Swift.Bool
+  public func isValidPassword(string: Swift.String) -> Swift.Bool
+  public func isValidPassword2(string: Swift.String) -> Swift.Bool
+  public func isValidInputPassWord(string: Swift.String) -> Swift.Bool
+  public func isValidAddress(_ string: Swift.String) -> Swift.Bool
+  public func isValidEmail(_ email: Swift.String) -> Swift.Bool
+  public func hasNoNilProperties<T>(_ object: T) -> Swift.Bool where T : Swift.Decodable, T : Swift.Encodable
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class Convert {
+  public static let shared: Module.Logger
+  public func getItemDict(byIndex index: Swift.Int, dict: [Swift.String : [Swift.String]]) -> [Swift.String : [Swift.String]]
+  public func removeItem<Key, Value>(at index: Swift.Int, from dictionary: [Key : Value], keyComparison: (Key, Swift.Int) -> Swift.Bool, shiftKey: (Key, Swift.Int) -> Key) -> [Key : Value] where Key : Swift.Hashable
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class Reachability {
+  public static let shared: Module.Reachability
+  public func isConnectedToNetwork() -> Swift.Bool
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class Times {
+  public static let shared: Module.Times
+  public enum Component {
+    case DAY
+    case MONTH
+    case YEAR
+    public static func == (a: Module.Times.Component, b: Module.Times.Component) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public static let MILLIS_PER_DAY: Swift.Int64
+  public static let MILLIS_PER_MIN: Swift.Int64
+  public func now() -> Swift.Int64
+  public func now2() -> Swift.Int64
+  public func toTimeMillis(date: Foundation.Date) -> Swift.Int64
+  public func today() -> Foundation.Date
+  public func toDate(timeMillis: Swift.Int64) -> Foundation.Date
+  public func toDate2(timeMillis: Swift.Int64) -> Foundation.Date
+  public func addMonth(from: Foundation.Date, offset: Swift.Int) -> Swift.Int64
+  public func addDay(from: Foundation.Date, offset: Swift.Int) -> Swift.Int64
+  public func addYear(from: Foundation.Date, offset: Swift.Int) -> Swift.Int64
+  public func add(component: Module.Times.Component, offset: Swift.Int) -> Swift.Int64
+  public func add(component: Module.Times.Component, from: Foundation.Date, offset: Swift.Int) -> Swift.Int64
+  public func daysBetweenInt64Date(startDate: Swift.Int64, endDate: Swift.Int64) -> Swift.Double
+  public func daysBetweenUInt64Date(startDate: Swift.UInt64, endDate: Swift.UInt64) -> Swift.Double
+  public func startOfDay() -> Swift.Int64
+  public func startOfDate(date: Foundation.Date) -> Swift.Int64
+  public func startOfDateToDate(date: Foundation.Date, locale: Swift.String = "en_US", useUTC: Swift.Bool = false) -> Foundation.Date
+  public func getCountDay(startDate: Foundation.Date, endDate: Foundation.Date) -> Swift.Int
+  public func getCountDayMilliseconds(_ startMilliseconds: Swift.Int64, _ endMilliseconds: Swift.Int64) -> Swift.Int
+  public func getCountMonth(startDate: Foundation.Date, endDate: Foundation.Date) -> Swift.Int
+  public func getTotalTime(startDate: Foundation.Date, endDate: Foundation.Date, components: Foundation.Calendar.Component) -> Foundation.DateComponents
+  public func getDateStringFromUInt64(dates: Swift.UInt64, type: Swift.String) -> Swift.String
+  public func getDateStringFromInt64(dates: Swift.Int64, type: Swift.String = "dd/MM/yyyy", locale: Swift.String = "en", isUseFullStyle: Swift.Bool = false) -> Swift.String
+  public func getDateStringFromInt64NotPlus1000(dates: Swift.Int64, type: Swift.String) -> Swift.String
+  public func getTimeFromSecond(seconds: Swift.Int64) -> Swift.String
+  public func getTimeFromSecondV2(seconds: Swift.Int64) -> Swift.String
+  public func getDateStringFromDatePicker(date: Foundation.Date, type: Swift.String, locale: Swift.String = "vi_VN", isUseFullStyle: Swift.Bool = false) -> Swift.String
+  public func toDateString(timeMillis: Swift.Int64, type: Swift.String = "dd/MM/yyyy") -> Swift.String
+  public func toPlusDateString(timeMillis: Swift.Int64, datePlus: Swift.Double = 1.5, type: Swift.String = "dd/MM/yyyy") -> Swift.String
+  public func convertStringDateToTimeStamp(dateString: Swift.String) -> Swift.Int
+  public func toDateStringV2(timeMillis: Swift.Int64, type: Swift.String = "dd/MM/yyyy HH:mm") -> Swift.String
+  public func toDateStringV3(timeMillis: Swift.Int64) -> Swift.String
+  public func toTimeString(timeMillis: Swift.Int64) -> Swift.String
+  public func toTimeString12Format(timeMillis: Swift.Int64) -> Swift.String
+  public func toDatesOfMonth(timeMillis: Swift.Int64, type: Swift.String = "dd", locale: Swift.String = "en_US") -> Swift.String
+  public func toDatesOfWeek(timeMillis: Swift.Int64, locale: Swift.String = "en_US") -> Swift.String
+  public func toMonth(timeMillis: Swift.Int64, type: Swift.String = "MM", locale: Swift.String = "en_US") -> Swift.String
+  public func toYear(timeMillis: Swift.Int64) -> Swift.String
+  public func stringToDate(_ dateString: Swift.String, type: Swift.String = "dd/MM/yyyy", locale: Swift.String = "en_US", useUTC: Swift.Bool = false) -> Foundation.Date?
+  public func isValidDOB(_ dob: Foundation.Date, numberOfYear: Swift.Int = 150) -> Swift.Bool
+  public func convertKmerDateStrToDate(khmerDate: Swift.String) -> Foundation.Date?
+  public func convertKhmerDateStringToString(_ khmerDateString: Swift.String, with type: Swift.String = "dd/MM/yyyy") -> Swift.String?
+  public func convertDateToString(_ date: Foundation.Date, type: Swift.String = "dd MMM yyyy", locale: Swift.String = "en_US") -> Swift.String
+  public func getAllMonthOfYear() -> [Swift.String]
+  public func getAllYearFromCurrent(_ count: Swift.Int) -> [Swift.String]
+  public func getAllYearAfterCurrent(_ count: Swift.Int) -> [Swift.String]
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class DynamicHeightTableView : UIKit.UITableView {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public var intrinsicContentSize: CoreFoundation.CGSize {
+    @objc get
+  }
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public var contentSize: CoreFoundation.CGSize {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func reloadData()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect, style: UIKit.UITableView.Style)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class JSON {
+  public static let shared: Module.JSON
+  public func convertJsonToArrayString(data: Swift.String?) -> [Swift.String]
+  public func parseDataToArrImage(data: Swift.String?) -> [Swift.String]
+  public func parseDataToString(data: Any) -> Swift.String
+  public func parseDataToStringV2(data: Any) -> Swift.String
+  public func parseJsonToStringArray(jsonString: Swift.String) -> [Swift.String]
+  public func filterJson(_ data: Any) -> Swift.String
+  public func toDict(_ text: Swift.String) -> [Swift.String : Any]
+  public func toArrayDict(_ text: Swift.String) -> [[Swift.String : Any]]?
+  public func parseDataToDict(_ data: Foundation.Data) -> [Swift.String : Any]?
+  public func convertToDictionary(_ text: Swift.String) -> [Swift.String : Any]?
+  public func dictStringToString(_ dict: [Swift.String : Swift.String]) -> Swift.String
+  public func dictToString(_ dict: [Swift.String : Any]) -> Swift.String
+  public func arrayDictToString(_ arrayDict: [[Swift.String : Any]]) -> Swift.String
+  public func arrayToJsonString(_ data: [Swift.String]) -> Swift.String?
+  public func toDictArr2(_ json: Swift.String?) -> [[Swift.String : Any]?]?
+  public func toDict2(_ json: Swift.String?) -> [Swift.String : Any]?
+  public func getCodeRespone(_ json: [Swift.String : Any]) -> Swift.String
+  public func getDataRespone(_ json: [Swift.String : Any]) -> Swift.String
+  @objc deinit
+}
+extension Swift.String {
+  public func timestampToFormatedDate(format: Swift.String) -> Swift.String
+  public func convertHtmlToAttributedStringWithCSS(font: UIKit.UIFont?) -> Foundation.NSAttributedString?
+}
+@_hasMissingDesignatedInitializers public class PermissionManager {
+  public static let shared: Module.PermissionManager
+  public func checkPhotoLibraryPermission(completion: @escaping (Swift.Bool) -> Swift.Void)
+  public func showPhotosPermisstionAlert(from viewController: UIKit.UIViewController)
+  public func checkCapturePermission(completion: @escaping (Swift.Bool) -> Swift.Void)
+  @objc deinit
+}
+public enum LogEvents : Swift.String {
+  case debug
+  case info
+  case event
+  case warn
+  case error
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers public class Logger : ObjectiveC.NSObject {
+  public static let shared: Module.Logger
+  public func Logs(event: Module.LogEvents = LogEvents.debug, message: Any, fileName: Swift.String = #file, funcName: Swift.String = #function, line: Swift.Int = #line)
+  public func DumpLogs(event: Module.LogEvents = LogEvents.debug, message: Any, fileName: Swift.String = #file, funcName: Swift.String = #function, line: Swift.Int = #line)
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension UIKit.UIColor {
+  convenience public init(_ value: Swift.Int)
+  convenience public init(_ value: Swift.Int, alpha: CoreFoundation.CGFloat)
+  public func alpha(_ value: CoreFoundation.CGFloat) -> UIKit.UIColor
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class DynamicHeightCollectionView : UIKit.UICollectionView {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func layoutSubviews()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func reloadData()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public var intrinsicContentSize: CoreFoundation.CGSize {
+    @objc get
+  }
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect, collectionViewLayout layout: UIKit.UICollectionViewLayout)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+public enum RoundingPrecision {
+  case ones
+  case tenths
+  case hundredths
+  case thousands
+  public static func == (a: Module.RoundingPrecision, b: Module.RoundingPrecision) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class ViewService {
+  public static let shared: Module.ViewService
+  public func findTopMostViewController() -> UIKit.UIViewController?
+  public func topViewController(controller: UIKit.UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIKit.UIViewController?
+  public func findParentPageViewController(_ viewController: UIKit.UIViewController?) -> UIKit.UIPageViewController?
+  @objc deinit
+}
+public class Debouncer {
+  public var callback: (() -> Swift.Void)
+  public var delay: Swift.Double
+  weak public var timer: Foundation.Timer?
+  public init(delay: Swift.Double, callback: @escaping (() -> Swift.Void))
+  public func call()
+  @objc deinit
+}
+extension UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency public func addTapGestureRecognizer(action: (() -> Swift.Void)?)
+}
+extension UIKit.UIViewController {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func motionEnded(_ motion: UIKit.UIEvent.EventSubtype, with event: UIKit.UIEvent?)
+}
+extension UIKit.UILabel {
+  @_Concurrency.MainActor @preconcurrency public func requiredHeight(for text: Swift.String, width: CoreFoundation.CGFloat, mininumLine: Swift.Int) -> UIKit.UILabel
+}
+extension Module.Times.Component : Swift.Equatable {}
+extension Module.Times.Component : Swift.Hashable {}
+extension Module.LogEvents : Swift.Equatable {}
+extension Module.LogEvents : Swift.Hashable {}
+extension Module.LogEvents : Swift.RawRepresentable {}
+extension Module.RoundingPrecision : Swift.Equatable {}
+extension Module.RoundingPrecision : Swift.Hashable {}
