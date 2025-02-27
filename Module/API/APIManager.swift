@@ -12,7 +12,7 @@ import UIKit
 
 public class APIManager {
     private init (){}
-    static let standard = APIManager()
+    public static let standard = APIManager()
     
     private var dataTask: URLSessionDataTask?
     
