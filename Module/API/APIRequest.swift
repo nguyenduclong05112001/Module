@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum APIMethod: String {
+public enum APIMethod: String {
     case get = "GET"
     case post = "POST"
     case delete = "DELETE"
@@ -17,13 +17,13 @@ enum APIMethod: String {
 
 struct EmptyData: Decodable {}
 
-struct APICommonResponse<T: Decodable>: Decodable {
+public struct APICommonResponse<T: Decodable>: Decodable {
     let code: String?
     let messages: String?
     let data: T?
 }
 
-enum APIError: Error {
+public enum APIError: Error {
     case serverError(code: String, message: String?)
     case unexpected(code: Int, message: String?)
     case insiderError(error: Error)

@@ -35,7 +35,7 @@ public class APIManager {
         return newParamters
     }
     
-    func commonRequest<T: Decodable>(
+    public func commonRequest<T: Decodable>(
         urlString: String,
         method: APIMethod,
         header: [String: Any]? = nil,
