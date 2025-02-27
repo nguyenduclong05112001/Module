@@ -18,9 +18,9 @@ public enum APIMethod: String {
 struct EmptyData: Decodable {}
 
 public struct APICommonResponse<T: Decodable>: Decodable {
-    let code: String?
-    let messages: String?
-    let data: T?
+    public let code: String?
+    public let messages: String?
+    public let data: T?
 }
 
 public enum APIError: Error {
